@@ -1,27 +1,62 @@
-# JonadaMilhas
+# [NOME DO CURSO / JonadaMilhas]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Projeto de estudos desenvolvido durante o curso **[Nome do Curso]**, focado em [descreva brevemente o objetivo principal da aplicação, ex: criação de um CRUD, gerenciamento de estado, rotas, etc.].
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## O que foi estudado
 
-## Code scaffolding
+### Aula 1 – [Iniciando a Jornada da Componetização]
+| Objetivo: [Objetivo da aula em 1 frase]
+  - Comandos do Angular CLI usados:
+  ```
+	- ng new JornadaMilhas
+	- ng g c shared/header
+  - ng g c shared/footer
+  - ng g c shared/banner
+  - ng g c shared/card
+	```
+  
+  - O que foi feito:
+  
+  - Conceitos apresentados:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+### Aula 2 – [Criando componentes reutilizáveis]
+| Objetivo: [Objetivo da aula em 2 frase]
+- Comandos do Angular CLI usados:
+  ```
+  - bash
+	```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  - O que foi feito:
 
-## Running unit tests
+  - Conceitos apresentados:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Preview do projeto
+<p align="center">
+  <img src="./images/demo.gif" alt="Demonstração da Aplicação Angular" width="100%"/>
+</p>
+<img src="./Print-DIeZonas.png" alt="Tela do Projeto DIeZonas" width="500"/>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Tecnologias
+- [Angular 16.0.0](https://angular.dev/)
+- Typescript
+- HTML / CSS
+- JSON
+- Node.js v18.18.2
+- [Figma (Desing da aplicação)] (..)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Como executar
+```
+- npm install
+- ng serve
+- Acesse no navegador: http://localhost:4200
+```
+---
+
+## Anotações importantes
