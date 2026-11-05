@@ -11,6 +11,7 @@ import { CardComponent } from './shared/card/card.component';
 import { ContainerComponent } from './shared/container/container.component';
 import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
 import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoimento.component';
+import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
 
 import { HomeComponent } from './pages/home/home.component';
 
@@ -19,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar'; //Angular Material Toolbar
 import { MatButtonModule } from '@angular/material/button'; //Angular Material botões
 import { MatCardModule } from '@angular/material/card'; //Angular Material cards
+import { MatButtonToggleModule } from '@angular/material/button-toggle'; //Angular Material botão toggle
+import { MatIconModule } from '@angular/material/icon'; // Angular Material ícones
+import { MatChipsModule } from '@angular/material/chips'; // Angular Material chips(etiquetas)
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { MatCardModule } from '@angular/material/card'; //Angular Material cards
     ContainerComponent,
     HomeComponent,
     CardBuscaComponent,
-    CardDepoimentoComponent
+    CardDepoimentoComponent,
+    FormBuscaComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,10 @@ import { MatCardModule } from '@angular/material/card'; //Angular Material cards
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 # Angular: componentização e design com Angular Material - Angular 16 | JonadaMilhas
 
-Projeto de estudos desenvolvido durante o curso **Angular: Componentização e design com Angular Material**, focado na estruturação da aplicação, aplicando boas práticas de componentização, estilização com SCSS e componentes visuais do Angular Material.
+> Projeto de estudos desenvolvido durante o curso **Angular: Componentização e design com Angular Material**, focado na estruturação da aplicação, aplicando boas práticas de componentização, estilização com SCSS e componentes visuais do Angular Material.
 
 ---
 
@@ -8,7 +8,8 @@ Projeto de estudos desenvolvido durante o curso **Angular: Componentização e d
 
 ### Aula 1 – Iniciando a Jornada da Componetização
 | Objetivo: Criar a estrutura inicial do projeto e estilizar componentes compartilhados utilizando Angular Material e SCSS.
-	- Comandos do Angular CLI usados:
+	
+	- Comandos do Angular CLI usados:	
 	```
 	- ng new JornadaMilhas
 	- ng g c shared/header
@@ -33,7 +34,8 @@ Projeto de estudos desenvolvido durante o curso **Angular: Componentização e d
 
 ### Aula 2 – Criando componentes reutilizáveis
 | Objetivo: Construir componentes e containers flexíveis e reutilizáveis utilizando a diretiva `ng-content` e o Angular Material.
-	- Comandos do Angular CLI usados:
+	
+	- Comandos do Angular CLI usados:	
 	```
 	- ng g c shared/container	
 	- ng g c shared/card-busca
@@ -57,9 +59,10 @@ Projeto de estudos desenvolvido durante o curso **Angular: Componentização e d
 
 ### Aula 3 – Criando o formulário de busca
 | Objetivo: 
+	
 	- Comandos do Angular CLI usados:
 	```
-	- bash
+	
 	```
 
 	- O que foi feito:
@@ -70,9 +73,10 @@ Projeto de estudos desenvolvido durante o curso **Angular: Componentização e d
 
 ### Aula 4 – Criando o modal
 | Objetivo: 
+	
 	- Comandos do Angular CLI usados:
 	```
-	- bash
+	
 	```
 
 	- O que foi feito:
