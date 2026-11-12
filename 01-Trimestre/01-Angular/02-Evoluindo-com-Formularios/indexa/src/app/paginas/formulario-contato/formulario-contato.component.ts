@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
@@ -22,17 +22,19 @@ export class FormularioContatoComponent {
 
   constructor() {
     this.contatoForm = new FormGroup({
-      nome: new FormControl('daiane'),
-      telefone: new FormControl('17981146771'),
-      email: new FormControl('teste@teste.com'),
+      nome: new FormControl('', Validators.required),
+      telefone: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       aniversario: new FormControl(''),
       redes: new FormControl(''),
-      observacoes: new FormControl('Hello World')
+      observacoes: new FormControl('')
     })
   }
 
   salvarContato() {
-    console.log(this.contatoForm.value);
+    if(this.contatoForm.valid) {
+      console.log(this.contatoForm.value);
+    }
   }
 
   cancelar() {
