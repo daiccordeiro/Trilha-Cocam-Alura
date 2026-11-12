@@ -28,6 +28,13 @@ header .cabecalho-link a {
   color: #0D6EFD;
 }
 
+header .cabecalho-link button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
 header .cabecalho-contato {
   display: flex;
   flex-direction: column;
