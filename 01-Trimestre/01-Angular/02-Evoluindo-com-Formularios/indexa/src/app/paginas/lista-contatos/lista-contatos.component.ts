@@ -11,12 +11,7 @@ import { ContatoComponent } from '../../componentes/contato/contato.component';
 import { FormularioContatoComponent } from '../formulario-contato/formulario-contato.component';
 
 import { ContatoService } from '../../services/contato.service';
-
-interface Contato {
-  id: number
-  nome: string
-  telefone: string
-}
+import { Contato } from '../../componentes/contato/contato';
 
 @Component({
   selector: 'app-lista-contatos',
@@ -55,7 +50,7 @@ export class ListaContatosComponent implements OnInit{
 
   filtrarContatosPorTexto (): Contato [] {
     if (!this.filtroPorTexto) {
-        return this.contatos
+        return this.contatos;
     }
     return this.contatos.filter(contato => {
       // Compara os nomes sem acentuações

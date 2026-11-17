@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface Contato {
-  id: number
-  nome: string
-  telefone: string
-}
+import { Contato } from '../componentes/contato/contato';
 
 @Injectable({
   providedIn: 'root'
@@ -12,27 +7,38 @@ interface Contato {
 export class ContatoService {
 
   private contatos: Contato[] = [
-    {"id": 1, "nome": "Ana", "telefone": "29 278869420"},
-    {"id": 2, "nome": "Ágata", "telefone": "38 128451235"},
-    {"id": 3, "nome": "Bruno", "telefone": "95 695521583"},
-    {"id": 4, "nome": "Beatriz", "telefone": "25 854986459"},
-    {"id": 5, "nome": "Carlos", "telefone": "94 543197849"},
-    {"id": 7, "nome": "Daniel", "telefone": "56 613692441"},
+    {"id": 1, "nome": "Daiane", "telefone": "17 981146771", "email": "daiane@teste.com"},
   ]
 
   constructor() {
     //Tentar obter os dados do localStorage
     const contatosLocalStorageString = localStorage.getItem('contatos');
-    const contatosLocalStorage =
-      contatosLocalStorageString ? JSON.parse(contatosLocalStorageString) : null;
 
-    this.contatos = contatosLocalStorage || null;
+    if (contatosLocalStorageString) {
+      // Se já existe algo no localStorage, carrega os contatos a partir dele
+      this.contatos = JSON.parse(contatosLocalStorageString);
+    } else {
+      // If/Else para inicializar o localStorage com o contato padrão [Daiane] caso esteja vazio, pois estava dando erro por estar null
+      //const contatosLocalStorage = contatosLocalStorageString ? JSON.parse(contatosLocalStorageString) : null;
+      //this.contatos = contatosLocalStorage || null;
 
-    //Salvar os contatos no localStorage
-    localStorage.setItem('contatos', JSON.stringify(this.contatos));
+      // Se o localStorage está totalmente vazio, inicializa com o contato padrão [Daiane] e salva
+      localStorage.setItem('contatos', JSON.stringify(this.contatos));
+    }
   }
 
   obterContatos() {
     return this.contatos;
   }
+
+  salvarContato(contato: Contato) {
+    // Garantia de segurança caso o array esteja vazio - não é estritamente necessário, mas é uma boa prática
+    if (!this.contatos) {
+      this.contatos = [];
+    }
+
+    this.contatos.push(contato);
+    localStorage.setItem('contatos', JSON.stringify(this.contatos));
+  }
 }
+
