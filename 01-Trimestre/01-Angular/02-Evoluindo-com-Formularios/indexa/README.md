@@ -123,9 +123,9 @@
 
 ## Preview do projeto
 <p align="center">
-	<img src="./images/IndexaFormulario.gif" alt="Demonstração Indexa Formulario" width="100%"/>
+	<img src="./src/assets/IndexaFormulario.gif" alt="Demonstração Indexa Formulario" width="50%"/>
 </p>
-<img src="./Print-IndexaFormulario.png" alt="Tela Indexa Formulario" width="500"/>
+<!--<img src="./Print-IndexaFormulario.png" alt="Tela Indexa Formulario" width="500"/>-->
 
 ## Tecnologias
 - [Angular 17.0.0](https://angular.dev/)
