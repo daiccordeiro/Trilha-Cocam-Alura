@@ -38,7 +38,10 @@ export class ListaContatosComponent implements OnInit{
   constructor(private contatoService: ContatoService) {}
 
   ngOnInit() {
-    this.contatos = this.contatoService.obterContatos();
+    // HttpClient com o método get() sempre retorna um Observable
+    this.contatoService.obterContatos().subscribe(listaContatos => {
+      this.contatos = listaContatos;
+    });
   }
 
   // Função auxiliar para remover acentos e deixar minúsculo
