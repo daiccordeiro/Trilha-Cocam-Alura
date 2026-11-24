@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
@@ -27,10 +27,12 @@ export class FormularioContatoComponent implements OnInit{
 
   constructor(
     private contatoService: ContatoService,
-    private router: Router) {}
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.inicializarFormulario();
+    this.carregarContato();
   }
 
   inicializarFormulario() {
@@ -44,14 +46,26 @@ export class FormularioContatoComponent implements OnInit{
     })
   }
 
+  carregarContato(){
+    const id = this.activatedRoute.snapshot.paramMap.get('id')
+    if (id) {
+      this.contatoService.buscarPorId(parseInt(id)).subscribe(contato => {
+        this.contatoForm.patchValue(contato);
+      })
+    }
+  }
+
   salvarContato() {
     const novoContato = this.contatoForm.value;
-    this.contatoService.salvarContato(novoContato).subscribe(() => {;
+    const id = this.activatedRoute.snapshot.paramMap.get('id')
+    novoContato.id = id ? parseInt(id) : null;
+
+    this.contatoService.editarOuSalvarContato(novoContato).subscribe(() => {
       this.contatoForm.reset();
       this.router.navigateByUrl('/lista-contatos') // redireciona para a página de lista de contatos após salvar o contato
     });
   }
-  
+
   cancelar() {
     this.contatoForm.reset();
   }
